@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>VIAJANDO</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<form class="form-registro" action="/formulario" method="post" role="form">
+    <h2>Registro</h2>
+    <input type="email" name="usuario" placeholder="Correo" required autofocus>
+    <input type="password" name="contrasena" placeholder="Contrasena" required>
+
+    <button type="button">Registrarme</button>
+    <input type="button" OnClick= "location.href = 'login'" value="LOGIN">
+
+</form>
+
+<script>
+    $(document).on('ready',function() {
+        $('button').click(function () {
+            $.ajax({
+                url: 'http://127.0.0.1:5000/registro',
+                data: $('form').serialize(),
+                type: 'POST',
+                success: function (response) {
+                    console.log(response);
+                    alert(response)
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+
+</html>
