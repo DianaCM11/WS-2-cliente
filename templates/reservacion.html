@@ -21,6 +21,8 @@
     $(document).on('ready',function() {
         $('button').click(function () {
             $.ajax({
+                "async":true,
+                "crossDomain":true,
                 url: 'http://127.0.0.1:5000/viajando/reservacion',
                 data: $('form').serialize(),
                 type: 'POST',
