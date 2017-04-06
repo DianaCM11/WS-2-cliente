@@ -17,35 +17,8 @@
     <button type="button">OK</button>
 </form>
 
-<script>
-    $(document).on('ready',function() {
-        $('button').click(function () {
-            var user = $('#user').val();
-            var pass = $('#pass').val();
-            $.ajax({
-                "async":true,
-                "crossDomain":true,
-                url: 'http://127.0.0.1:5000/login',
-                data: $('form').serialize(),
-                type: 'GET',
-                "headers": {
-                    "authorization": "Basic "+ btoa(user + ":"+pass),
-                    "cache-control": "cache"
-                },
-                success: function (response) {
-                    console.log(response);
-                    alert(response);
-                    location.href='consultas.html'
-
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
-        });
-    });
-</script>
-
 </body>
+
+<script src="viajando.js"></script>
 
 </html>
