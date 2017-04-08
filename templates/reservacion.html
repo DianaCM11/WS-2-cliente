@@ -26,6 +26,9 @@
                 url: 'http://127.0.0.1:5000/viajando/reservacion',
                 data: $('form').serialize(),
                 type: 'POST',
+                "headers": {
+                    "authorization": "Basic " + btoa(user + ":" + pass)
+                },
                 success: function (response) {
                     console.log(response);
                     alert(response);

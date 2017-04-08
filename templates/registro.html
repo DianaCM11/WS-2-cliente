@@ -21,12 +21,17 @@
 <script>
     $(document).on('ready',function() {
         $('button').click(function () {
+            var user = localStorage.getItem("user");
+            var pass = localStorage.getItem("pass");
             $.ajax({
                 "async":true,
                 "crossDomain":true,
                 url: 'http://127.0.0.1:5000/registro',
                 data: $('form').serialize(),
                 type: 'POST',
+                "headers": {
+                    "authorization": "Basic " + btoa(user + ":" + pass)
+                },
                 success: function (response) {
                     console.log(response);
                     alert(response);
