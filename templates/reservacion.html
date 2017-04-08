@@ -11,9 +11,27 @@
 
 <form class="form-consultas" action="/reservar" method="post" role="form">
     <h2>Reserve su espacio</h2>
-    <input name="tipoTransporte" placeholder="Tipo de Transporte" required autofocus>
+
+    <h5>1. Seleccione el tipo de transporte</h5>
+    <select name="tipoTransporte">
+        <option value="avion">AVION</option>
+        <option value="bus">BUS</option>
+        <option value="taxi">TAXI</option>
+        <option value="tren">TREN</option>
+    </select>
+
+    <h5>2. Seleccione la cantidad de plazas a reservar</h5>
+    <select name="cantidad">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+    </select>
+
+    <h5>3. Digite el identificador del transporte deseado</h5>
     <input name="ID" placeholder="ID del transporte" required autofocus>
-    <input name="cantidad" placeholder="Cantidad de espacios" required autofocus>
+
     <button type="button">Reservar</button>
 </form>
 
@@ -36,6 +54,7 @@
                 error: function (error) {
                     console.log(error);
                     alert(response);
+                    alert("Lo sentimos, nos es posible realizar la accion "+error);
                 }
             });
         });

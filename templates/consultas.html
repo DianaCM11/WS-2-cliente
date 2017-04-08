@@ -11,35 +11,97 @@
 
 <form class="form-consultas" action="/consultas" method="post" role="form">
     <h2>Consulte por su ruta</h2>
-    <input name="origen" placeholder="Punto de Origen" required autofocus>
-    <input name="destino" placeholder="Punto de Destino" required autofocus>
-    <input name="tipoTransporte" placeholder="Tipo de Transporte" required autofocus>
+
+    <h5>1. Seleccione su punto de origen</h5>
+    <select name="origen">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=9>9</option>
+        <option value=10>10</option>
+        <option value=11>11</option>
+        <option value=12>12</option>
+        <option value=13>13</option>
+        <option value=14>14</option>
+        <option value=15>15</option>
+        <option value=16>16</option>
+        <option value=17>17</option>
+        <option value=18>18</option>
+        <option value=19>19</option>
+        <option value=20>20</option>
+        <option value=21>21</option>
+        <option value=22>22</option>
+        <option value=23>23</option>
+        <option value=24>24</option>
+    </select>
+
+    <h5>2. Seleccione su destino</h5>
+    <select name="destino">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=9>9</option>
+        <option value=10>10</option>
+        <option value=11>11</option>
+        <option value=12>12</option>
+        <option value=13>13</option>
+        <option value=14>14</option>
+        <option value=15>15</option>
+        <option value=16>16</option>
+        <option value=17>17</option>
+        <option value=18>18</option>
+        <option value=19>19</option>
+        <option value=20>20</option>
+        <option value=21>21</option>
+        <option value=22>22</option>
+        <option value=23>23</option>
+        <option value=24>24</option>
+    </select>
+
+    <h5>3. Seleccione el tipo de transporte</h5>
+    <select name="tipoTransporte">
+        <option value="avion">AVION</option>
+        <option value="bus">BUS</option>
+        <option value="taxi">TAXI</option>
+        <option value="tren">TREN</option>
+    </select>
     <button type="button">Consultar</button>
-    <input type = "button"  onclick="location.href='reservacion.html'" value="Reservar">
+
+    <input type="button" onclick="location.href='reservacion.html'" value="Reservar">
 
 </form>
 
 <script>
-    $(document).on('ready',function() {
+    $(document).on('ready', function () {
         $('button').click(function () {
             var user = localStorage.getItem("user");
             var pass = localStorage.getItem("pass");
             $.ajax({
-                "async":true,
-                "crossDomain":true,
+                "async": true,
+                "crossDomain": true,
                 url: 'http://127.0.0.1:5000/viajando/consultas',
                 data: $('form').serialize(),
                 type: 'POST',
-                 "headers": {
-                     "authorization": "Basic " + btoa(user + ":" + pass)
-                 },
+                "headers": {
+                    "authorization": "Basic " + btoa(user + ":" + pass)
+                },
                 success: function (response) {
                     console.log(response);
-                    alert(response);
+                    alert(response)
                 },
                 error: function (error) {
                     console.log(error);
-                    alert("Requiere autorización")
+                    alert("Lo sentimos, nos es posible realizar la accion "+error);
                 }
             });
         });
