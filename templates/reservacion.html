@@ -36,11 +36,13 @@
 </form>
 
 <script>
-    $(document).on('ready',function() {
+    $(document).on('ready', function () {
         $('button').click(function () {
+            var user = localStorage.getItem("user");
+            var pass = localStorage.getItem("pass");
             $.ajax({
-                "async":true,
-                "crossDomain":true,
+                "async": true,
+                "crossDomain": true,
                 url: 'http://127.0.0.1:5000/viajando/reservacion',
                 data: $('form').serialize(),
                 type: 'POST',
@@ -49,18 +51,16 @@
                 },
                 success: function (response) {
                     console.log(response);
-                    alert(response);
+                    alert(response)
                 },
                 error: function (error) {
                     console.log(error);
-                    alert(response);
                     alert("Lo sentimos, nos es posible realizar la accion "+error);
                 }
             });
         });
     });
 </script>
-
 </body>
 
 </html>
