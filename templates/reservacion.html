@@ -10,6 +10,8 @@
 
 <body>
 
+<input type="button" onclick="return salir(event)" value="Cerrar Sesión">
+
 <form class="form-consultas" action="/reservar" method="post" role="form">
     <h1>WS-2 VIAJANDO</h1>
     <h2>Reserve su espacio</h2>
@@ -47,6 +49,12 @@
         tecla_final = String.fromCharCode(tecla);
         return regex.test(tecla_final);
     }
+    function salir(e){
+        sessionStorage.clear();
+        location.href = 'consultas.html'
+    }
+
+
 </script>
 
 <script>
