@@ -30,10 +30,24 @@
     </select>
 
     <h5>3. Digite el código de reservación del transporte deseado</h5>
-    <input name="ID" placeholder="ID del transporte" required autofocus>
+    <input name="ID" placeholder="ID del transporte" onkeypress="return valida(event)" required autofocus>
 
     <button type="button">Reservar</button>
 </form>
+
+<script>
+    function valida(e){
+        tecla = (document.all) ? e.keyCode : e.which;
+
+        if (tecla==8){
+            return true;
+        }
+
+        regex =/[0-9]/;
+        tecla_final = String.fromCharCode(tecla);
+        return regex.test(tecla_final);
+    }
+</script>
 
 <script>
     $(document).on('ready', function () {
@@ -56,7 +70,7 @@
                 error: function (error) {
                     console.log(error);
                     alert("Lo sentimos, no es posible realizar la accion." +
-                        "Revise su reservación o inicie sesión")
+                        " Revise su reservación o inicie sesión")
                 }
             });
         });
