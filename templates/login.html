@@ -26,8 +26,8 @@
         $('button').click(function () {
             var user = $('#user').val();
             var pass = $('#pass').val();
-            localStorage.setItem("user",user);
-            localStorage.setItem("pass",pass);
+            sessionStorage.setItem("user",user);
+            sessionStorage.setItem("pass",pass);
             $.ajax({
                 "async": true,
                 "crossDomain": true,

@@ -38,8 +38,8 @@
 <script>
     $(document).on('ready', function () {
         $('button').click(function () {
-            var user = localStorage.getItem("user");
-            var pass = localStorage.getItem("pass");
+            var user = sessionStorage.getItem("user");
+            var pass = sessionStorage.getItem("pass");
             $.ajax({
                 "async": true,
                 "crossDomain": true,
