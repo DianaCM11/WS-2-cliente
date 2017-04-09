@@ -10,8 +10,6 @@
 
 <body>
 
-<input type="button" onclick="return salir(event)" value="Cerrar Sesión">
-
 <form class="form-consultas" action="/reservar" method="post" role="form">
     <h1>WS-2 VIAJANDO</h1>
     <h2>Reserve su espacio</h2>
@@ -37,6 +35,11 @@
     <button type="button">Reservar</button>
 </form>
 
+<br></br>
+<input type="button" onclick="return salir(event)" value="Cerrar Sesión">
+
+</body>
+
 <script>
     function valida(e){
         tecla = (document.all) ? e.keyCode : e.which;
@@ -51,9 +54,8 @@
     }
     function salir(e){
         sessionStorage.clear();
-        location.href = 'consultas.html'
+        location.href = 'login.html'
     }
-
 
 </script>
 
@@ -84,6 +86,6 @@
         });
     });
 </script>
-</body>
+
 
 </html>

@@ -143,7 +143,19 @@
 <IMG SRC="../Resources/mapa.png">
 
 
+<br></br>
+
+<input type="button" onclick="return salir(event)" value="Cerrar Sesión">
+
 </body>
+
+<script>
+    function salir(e){
+        sessionStorage.clear();
+        location.href = 'login.html'
+    }
+
+</script>
 
 <script>
     $(document).on('ready', function () {
