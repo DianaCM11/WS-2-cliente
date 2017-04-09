@@ -105,16 +105,21 @@
                 },
                 success: function (response) {
                     console.log(response);
-                    alert(response)
+                    alert(response.costo);
+                    alert(response.respuesta);
+                    document.getElementById("info").innerHTML = response.respuesta;
                 },
                 error: function (error) {
                     console.log(error);
-                    alert("Lo sentimos, nos es posible realizar la accion");
+                    alert("Lo sentimos, no es posible realizar la accion");
                 }
             });
         });
     });
 </script>
+
+<div id = "info">
+</div>
 
 </body>
 
