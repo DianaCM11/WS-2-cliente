@@ -105,9 +105,8 @@
                 },
                 success: function (response) {
                     console.log(response);
-                    alert(response.costo);
                     alert(response.respuesta);
-                    document.getElementById("info").innerHTML = response.respuesta;
+                    document.getElementById("info").innerHTML = response;
                 },
                 error: function (error) {
                     console.log(error);
