@@ -86,7 +86,7 @@ El sistema busca los buses del nodo-origen y el nodo-destino. Al usuario reserva
 El sistema brinda la información del bus al usuario como chofer, espacios disponibles, precios y horarios de buses. 
 
 
-Cliente: https://github.com/DianaCM11/WS-2-cliente
+Cliente
 Para el cliente se hizo uso de: 
 
 Ajax: La cual es una técnica de desarrollo web para crear aplicaciones interactivas o RIA (Rich Internet Applications). Estas aplicaciones se ejecutan en el cliente, mientras se mantiene la comunicación asíncrona con el servidor en segundo plano.
